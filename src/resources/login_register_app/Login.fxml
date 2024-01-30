@@ -4,15 +4,14 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;"
-            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;" stylesheets="@LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <left>
         <AnchorPane prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: #242422;" BorderPane.alignment="CENTER">
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="199.0" prefHeight="71.0" prefWidth="348.0" text="Welcome Back!" textAlignment="CENTER" textFill="#f69a1d">
@@ -25,44 +24,49 @@
                     <Font name="Montserrat Regular" size="19.0" />
                 </font>
             </Text>
-            <Button layoutX="148.0" layoutY="373.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="190.0" style="-fx-border-color: #cedecf; -fx-background-color: #242422; -fx-border-radius: 27; -fx-background-radius: 27;" text="LOG IN" textAlignment="CENTER" textFill="#cedecf">
-                <font>
-                    <Font name="Montserrat Bold" size="16.0" />
-                </font>
-            </Button>
+            <Button layoutX="148.0" layoutY="373.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="190.0" style="-fx-border-color: #cedecf; -fx-background-color: #242422;" styleClass="long-buttons" text="LOG IN" textAlignment="CENTER" textFill="#cedecf" />
         </AnchorPane>
     </left>
     <right>
-        <AnchorPane prefHeight="640.0" prefWidth="480.0"
-                    style="-fx-background-color: #e7edde; -fx-background-radius: 48 0 0 48;"
-                    BorderPane.alignment="CENTER">
-            <Label alignment="CENTER" layoutX="67.0" layoutY="107.0" prefHeight="18.0" prefWidth="346.0"
-                   text="Create Account" textAlignment="CENTER" textFill="#242422">
+        <AnchorPane prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: #e7edde; -fx-background-radius: 48 0 0 48;" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" layoutX="67.0" layoutY="107.0" prefHeight="18.0" prefWidth="346.0" text="Create Account" textAlignment="CENTER" textFill="#242422">
                 <font>
-                    <Font name="Montserrat Bold" size="42.0"/>
+                    <Font name="Montserrat Bold" size="42.0" />
                 </font>
             </Label>
-            <Button layoutX="145.0" layoutY="488.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="190.0"
-                    style="-fx-background-color: #f69a1d; -fx-border-radius: 27; -fx-background-radius: 27;"
-                    text="SIGN UP" textAlignment="CENTER" textFill="#242422">
+            <Button layoutX="145.0" layoutY="488.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="190.0" style="-fx-background-color: #f69a1d;" styleClass="long-buttons" text="SIGN UP" textAlignment="CENTER" textFill="#242422" />
+
+            <TextField layoutX="66.0" layoutY="285.0" prefHeight="56.0" prefWidth="350.0" promptText="Name" styleClass="form-text-field" />
+            <TextField layoutX="65.0" layoutY="353.0" prefHeight="56.0" prefWidth="350.0" promptText="Email" styleClass="form-text-field" />
+            <PasswordField layoutX="64.0" layoutY="421.0" prefHeight="56.0" prefWidth="350.0" promptText="Password" styleClass="form-text-field" />
+
+            <Label alignment="CENTER" layoutX="106.0" layoutY="256.0" prefHeight="18.0" prefWidth="266.0" text="or use your email for registration" textFill="#383836">
                 <font>
-                    <Font name="Montserrat Bold" size="16.0"/>
+                    <Font name="Montserrat Regular" size="16.0" />
                 </font>
+            </Label>
+
+            <Button graphicTextGap="0.0" layoutX="144.0" layoutY="178.0" mnemonicParsing="false" styleClass="account-chips">
+                <graphic>
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@icon-fb.png"/>
+                    </ImageView>
+                </graphic></Button>
+            <Button graphicTextGap="0.0" layoutX="211.0" layoutY="178.0" mnemonicParsing="false" styleClass="account-chips">
+                <graphic>
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@icon-google.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button graphicTextGap="0.0" layoutX="279.0" layoutY="178.0" mnemonicParsing="false" styleClass="account-chips">
+                <graphic>
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@icon-ms.png"/>
+                    </ImageView>
+                </graphic>
             </Button>
 
-            <TextField layoutX="66.0" layoutY="285.0" prefHeight="56.0" prefWidth="350.0" promptText="Name" styleClass="common-text-field"/>
-            <TextField layoutX="65.0" layoutY="353.0" prefHeight="56.0" prefWidth="350.0" promptText="Email" styleClass="common-text-field"/>
-            <PasswordField layoutX="64.0" layoutY="421.0" prefHeight="56.0" prefWidth="350.0" promptText="Password" styleClass="common-text-field"/>
-
-            <Label alignment="CENTER" layoutX="106.0" layoutY="256.0" prefHeight="18.0" prefWidth="266.0"
-                   text="or use your email for registration" textFill="#383836">
-                <font>
-                    <Font name="Montserrat Regular" size="16.0"/>
-                </font>
-            </Label>
-            <Circle fill="#e7edde" layoutX="172.0" layoutY="206.0" radius="28.0" stroke="#242422" strokeType="INSIDE"/>
-            <Circle fill="#e7edde" layoutX="239.0" layoutY="206.0" radius="28.0" stroke="#242422" strokeType="INSIDE"/>
-            <Circle fill="#e7edde" layoutX="307.0" layoutY="206.0" radius="28.0" stroke="#242422" strokeType="INSIDE"/>
         </AnchorPane>
     </right>
 </BorderPane>
