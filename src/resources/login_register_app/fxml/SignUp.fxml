@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;" stylesheets="@LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;" stylesheets="@../css/LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
     <left>
         <AnchorPane prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: #242422;" BorderPane.alignment="CENTER">
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="199.0" prefHeight="71.0" prefWidth="348.0" text="Welcome Back!" textAlignment="CENTER" textFill="#f69a1d">
@@ -46,23 +46,24 @@
                 </font>
             </Label>
 
-            <Button graphicTextGap="0.0" layoutX="144.0" layoutY="178.0" mnemonicParsing="false" styleClass="account-chips">
+            <Button graphicTextGap="0.0" layoutX="143.0" layoutY="177.0" mnemonicParsing="false" styleClass="account-chips">
                 <graphic>
-                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@icon-fb.png"/>
-                    </ImageView>
-                </graphic></Button>
-            <Button graphicTextGap="0.0" layoutX="211.0" layoutY="178.0" mnemonicParsing="false" styleClass="account-chips">
-                <graphic>
-                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@icon-google.png"/>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../images/icon-fb.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button graphicTextGap="0.0" layoutX="279.0" layoutY="178.0" mnemonicParsing="false" styleClass="account-chips">
+            <Button graphicTextGap="0.0" layoutX="210.0" layoutY="177.0" mnemonicParsing="false" styleClass="account-chips">
                 <graphic>
-                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@icon-ms.png"/>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../images/icon-google.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button graphicTextGap="0.0" layoutX="278.0" layoutY="177.0" mnemonicParsing="false" styleClass="account-chips">
+                <graphic>
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../images/icon-ms.png" />
                     </ImageView>
                 </graphic>
             </Button>
