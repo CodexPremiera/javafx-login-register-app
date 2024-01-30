@@ -11,8 +11,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;" stylesheets="@../css/LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-    <left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;" stylesheets="@../css/LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login_register_app.LoginController">
+   <right>
         <AnchorPane prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: #242422;" BorderPane.alignment="CENTER">
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="199.0" prefHeight="71.0" prefWidth="348.0" text="Hello, friend!" textAlignment="CENTER" textFill="#f69a1d">
                 <font>
@@ -24,11 +24,11 @@
                     <Font name="Montserrat Regular" size="19.0" />
                 </font>
             </Text>
-            <Button layoutX="148.0" layoutY="373.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="190.0" style="-fx-border-color: #cedecf; -fx-background-color: #242422;" styleClass="long-buttons" text="SIGN UP" textAlignment="CENTER" textFill="#cedecf" />
+            <Button fx:id="switchToSignUp" layoutX="148.0" layoutY="373.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="54.0" prefWidth="190.0" style="-fx-border-color: #cedecf; -fx-background-color: #242422;" styleClass="long-buttons" text="SIGN UP" textAlignment="CENTER" textFill="#cedecf" />
         </AnchorPane>
-    </left>
-    <right>
-        <AnchorPane prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: #e7edde; -fx-background-radius: 48 0 0 48;" BorderPane.alignment="CENTER">
+   </right>
+   <left>
+        <AnchorPane prefHeight="640.0" prefWidth="480.0" style="-fx-background-color: #e7edde; -fx-background-radius: 0 48 48 0;" BorderPane.alignment="CENTER">
             <Label alignment="CENTER" layoutX="67.0" layoutY="107.0" prefHeight="18.0" prefWidth="346.0" text="Sign in" textAlignment="CENTER" textFill="#242422">
                 <font>
                     <Font name="Montserrat Bold" size="42.0" />
@@ -38,13 +38,13 @@
             <TextField layoutX="64.0" layoutY="307.0" prefHeight="56.0" prefWidth="350.0" promptText="Email" styleClass="form-text-field" />
             <PasswordField layoutX="63.0" layoutY="375.0" prefHeight="56.0" prefWidth="350.0" promptText="Password" styleClass="form-text-field" />
 
-            <Label alignment="CENTER" layoutX="106.0" layoutY="256.0" prefHeight="18.0" prefWidth="266.0" text="or use your account" textFill="#383836">
+                  <Label alignment="CENTER" layoutX="106.0" layoutY="256.0" prefHeight="18.0" prefWidth="266.0" text="or use your account" textFill="#383836">
                 <font>
                     <Font name="Montserrat Regular" size="16.0" />
                 </font>
             </Label>
 
-            <Button graphicTextGap="0.0" layoutX="143.0" layoutY="177.0" mnemonicParsing="false" styleClass="account-chips">
+                  <Button graphicTextGap="0.0" layoutX="143.0" layoutY="177.0" mnemonicParsing="false" styleClass="account-chips">
                 <graphic>
                     <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                         <Image url="@../images/icon-fb.png" />
@@ -66,6 +66,6 @@
                 </graphic>
             </Button>
 
-        </AnchorPane>
-    </right>
+              </AnchorPane>
+   </left>
 </BorderPane>
