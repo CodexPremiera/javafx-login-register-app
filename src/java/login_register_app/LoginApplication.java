@@ -12,12 +12,12 @@ public class LoginApplication extends javafx.application.Application {
     @Override
     public void start(Stage stage) {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/SignUp.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/Login.fxml")));
             Scene scene = new Scene(root);
 
             String css = Objects.requireNonNull(this.getClass().getResource("css/LoginStyles.css")).toExternalForm();
             scene.getStylesheets().add(css);
-            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.initStyle(StageStyle.UNDECORATED);
 
             stage.setScene(scene);
             stage.show();

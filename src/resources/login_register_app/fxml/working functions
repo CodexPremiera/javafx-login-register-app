@@ -1,0 +1,21 @@
+    public void switchToSignUp(ActionEvent actionEvent) throws IOException {
+        Parent newRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/Signup.fxml")));
+
+        newRoot.opacityProperty().set(0);
+        loginBorderPane.getChildren().add(newRoot);
+
+        KeyValue newRootContainerOpacityKV =
+                new KeyValue(newRoot.opacityProperty(), 1, Interpolator.EASE_BOTH);
+        KeyFrame newRootContainerOpacityKF = new KeyFrame(Duration.seconds(0.5), newRootContainerOpacityKV);
+
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().addAll(
+                newRootContainerOpacityKF
+        );
+
+        timeline.setOnFinished(event -> {
+            loginBorderPane.getChildren().remove(loginContainer);
+        });
+
+        timeline.play();
+    }

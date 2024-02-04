@@ -8,54 +8,67 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;" stylesheets="@../css/LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login_register_app.LoginController">
+<BorderPane fx:id="signupBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" style="-fx-background-color: #242422;" stylesheets="@../css/LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login_register_app.LoginController">
    <right>
-        <AnchorPane prefHeight="640.0" prefWidth="560.0" style="-fx-background-color: #e7edde; -fx-background-radius: 48 0 0 48;" BorderPane.alignment="CENTER">
-            <Label alignment="CENTER" layoutX="27.0" layoutY="88.0" prefHeight="52.0" prefWidth="502.0" text="Create account" textAlignment="CENTER" textFill="#242422">
-                <font>
-                    <Font name="Montserrat Bold" size="42.0" />
-                </font>
-            </Label>
-            <Button layoutX="187.0" layoutY="517.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="190.0" style="-fx-background-color: #f69a1d;" styleClass="long-buttons" text="LOG IN" textAlignment="CENTER" textFill="#242422" />
-            <TextField layoutX="101.0" layoutY="339.0" prefHeight="56.0" prefWidth="360.0" promptText="Email" styleClass="form-text-field" />
-            <PasswordField layoutX="100.0" layoutY="407.0" prefHeight="56.0" prefWidth="360.0" promptText="Password" styleClass="form-text-field" />
+        <AnchorPane fx:id="signupContainer" prefHeight="640.0" prefWidth="560.0" style="-fx-background-color: #e7edde; -fx-background-radius:  0 0 0 0;" BorderPane.alignment="CENTER">
+            <Pane fx:id="signupContent" layoutX="27.0" layoutY="88.0">
+                <Label alignment="CENTER" prefHeight="52.0" prefWidth="502.0" text="Create account"
+                       textAlignment="CENTER" textFill="#242422">
+                    <font>
+                        <Font name="Montserrat Bold" size="42.0"/>
+                    </font>
+                </Label>
+                <Button layoutX="160.0" layoutY="429.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="190.0"
+                        style="-fx-background-color: #f69a1d;" styleClass="long-buttons" text="LOG IN"
+                        textAlignment="CENTER" textFill="#242422"/>
+                <TextField layoutX="74.0" layoutY="251.0" prefHeight="56.0" prefWidth="360.0" promptText="Email"
+                           styleClass="form-text-field"/>
+                <PasswordField layoutX="73.0" layoutY="319.0" prefHeight="56.0" prefWidth="360.0" promptText="Password"
+                               styleClass="form-text-field"/>
 
-                     <Label alignment="CENTER" layoutX="104.0" layoutY="235.0" prefHeight="22.0" prefWidth="354.0" text="or use your email to register" textFill="#383836">
-                <font>
-                    <Font name="Montserrat Regular" size="14.0" />
-                </font>
-            </Label>
+                <Label alignment="CENTER" layoutX="77.0" layoutY="147.0" prefHeight="22.0" prefWidth="354.0"
+                       text="or use your email to register" textFill="#383836">
+                    <font>
+                        <Font name="Montserrat Regular" size="14.0"/>
+                    </font>
+                </Label>
 
-                     <Button graphicTextGap="0.0" layoutX="173.0" layoutY="157.0" mnemonicParsing="false" styleClass="account-chips">
-                <graphic>
-                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../images/icon-fb.png" />
-                    </ImageView>
-                </graphic>
-            </Button>
-            <Button graphicTextGap="0.0" layoutX="250.0" layoutY="157.0" mnemonicParsing="false" styleClass="account-chips">
-                <graphic>
-                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../images/icon-google.png" />
-                    </ImageView>
-                </graphic>
-            </Button>
-            <Button graphicTextGap="0.0" layoutX="328.0" layoutY="157.0" mnemonicParsing="false" styleClass="account-chips">
-                <graphic>
-                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@../images/icon-ms.png" />
-                    </ImageView>
-                </graphic>
-            </Button>
-         <TextField layoutX="102.0" layoutY="271.0" prefHeight="56.0" prefWidth="360.0" promptText="Username" styleClass="form-text-field" />
+                <Button graphicTextGap="0.0" layoutX="146.0" layoutY="69.0" mnemonicParsing="false"
+                        styleClass="account-chips">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@../images/icon-fb.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button graphicTextGap="0.0" layoutX="223.0" layoutY="69.0" mnemonicParsing="false"
+                        styleClass="account-chips">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@../images/icon-google.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button graphicTextGap="0.0" layoutX="301.0" layoutY="69.0" mnemonicParsing="false"
+                        styleClass="account-chips">
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <Image url="@../images/icon-ms.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <TextField layoutX="75.0" layoutY="183.0" prefHeight="56.0" prefWidth="360.0" promptText="Username"
+                           styleClass="form-text-field"/>
+            </Pane>
 
                  </AnchorPane>
    </right>
    <center>
-        <AnchorPane prefHeight="640.0" prefWidth="400.0" style="-fx-background-color: #242422;" BorderPane.alignment="CENTER">
+        <AnchorPane fx:id="switchToLoginContainer"  prefHeight="640.0" prefWidth="400.0" style="-fx-background-color: #242422;" BorderPane.alignment="CENTER">
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="206.0" prefHeight="52.0" prefWidth="350.0" text="Welcome back!" textAlignment="CENTER" textFill="#f69a1d">
                 <font>
                     <Font name="Montserrat ExtraBold" size="36.0" />
@@ -66,7 +79,7 @@
                     <Font name="Montserrat Regular" size="16.0" />
                 </font>
             </Text>
-            <Button fx:id="switchToSignUp" layoutX="124.0" layoutY="391.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="43.0" prefWidth="152.0" style="-fx-border-color: #cedecf; -fx-background-color: #242422;" styleClass="long-buttons" text="LOG IN" textAlignment="CENTER" textFill="#cedecf" />
+            <Button fx:id="switchToLogin" layoutX="124.0" layoutY="391.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="43.0" prefWidth="152.0" style="-fx-border-color: #cedecf; -fx-background-color: #242422;" styleClass="long-buttons" text="LOG IN" textAlignment="CENTER" textFill="#cedecf" />
         </AnchorPane>
    </center>
 </BorderPane>
