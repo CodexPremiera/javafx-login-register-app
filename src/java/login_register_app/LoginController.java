@@ -8,14 +8,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -50,11 +46,10 @@ public class LoginController implements Initializable {
     @FXML private AnchorPane switchToLoginContainer;
 
 
-    private void loadSignUpScene(ActionEvent actionEvent) throws IOException {
-        Parent newRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/Signup.fxml")));
 
+    private void loadNewScene (Parent newRoot, BorderPane baseBorderPane, AnchorPane baseContainer) {
         newRoot.opacityProperty().set(0);
-        loginBorderPane.getChildren().add(newRoot);
+        baseBorderPane.getChildren().add(newRoot);
 
         KeyValue newRootContainerOpacityKV =
                 new KeyValue(newRoot.opacityProperty(), 1, Interpolator.EASE_BOTH);
@@ -66,54 +61,56 @@ public class LoginController implements Initializable {
         );
 
         timeline.setOnFinished(event -> {
-            loginBorderPane.getChildren().remove(loginContainer);
+            baseBorderPane.getChildren().remove(baseContainer);
         });
 
+        this.root = newRoot;
         timeline.play();
     }
-    
-    public void switchToSignUp(ActionEvent actionEvent) throws IOException {
-        loginContainer.translateXProperty().set(0);
+
+
+    private void switchToNewScene
+            (Parent newRoot, BorderPane baseBorderPane, AnchorPane baseContainer,
+             Pane baseContent, double baseContainerSlideValue) {
 
         // Create KeyValue
-        KeyValue loginContainerTranslateXKV =
-                new KeyValue(loginContainer.translateXProperty(), 400, Interpolator.EASE_BOTH);
-        KeyValue loginContentOpacityKV =
-                new KeyValue(loginContent.opacityProperty(), 0, Interpolator.EASE_BOTH);
+        KeyValue baseContainerTranslateXKV =
+                new KeyValue(baseContainer.translateXProperty(), baseContainerSlideValue, Interpolator.EASE_BOTH);
+        KeyValue baseContentOpacityKV =
+                new KeyValue(baseContent.opacityProperty(), 0, Interpolator.EASE_BOTH);
 
         // Create KeyFrames
-        KeyFrame loginContainerTranslateXKF = new KeyFrame(Duration.seconds(0.5), loginContainerTranslateXKV);
-        KeyFrame loginContentOpacityKF = new KeyFrame(Duration.seconds(0.5), loginContentOpacityKV);
+        KeyFrame baseContainerTranslateXKF = new KeyFrame(Duration.seconds(0.5), baseContainerTranslateXKV);
+        KeyFrame baseContentOpacityKF = new KeyFrame(Duration.seconds(0.4), baseContentOpacityKV);
 
         // Set and play Timeline
         Timeline timeline = new Timeline();
         timeline.getKeyFrames().addAll(
-                loginContainerTranslateXKF,
-                loginContentOpacityKF
+                baseContainerTranslateXKF,
+                baseContentOpacityKF
         );
 
         // Switch when Finished
         timeline.setOnFinished(event -> {
             try {
-                this.loadSignUpScene(actionEvent);
-            } catch (Exception e) {
+                this.loadNewScene(newRoot, baseBorderPane, baseContainer);
+            }
+            catch (Exception e) {
                 e.printStackTrace();
             }
         });
 
         timeline.play();
-
-
+    }
+    
+    public void switchToSignUp() throws IOException {
+        Parent newRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/Signup.fxml")));
+        switchToNewScene(newRoot, loginBorderPane, loginContainer, loginContent, 400);
     }
 
-    public void switchToLogin(ActionEvent actionEvent) throws IOException {
-
-        this.root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/Login.fxml")));
-        this.stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        this.scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
+    public void switchToLogin() throws IOException {
+        Parent newRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("fxml/Login.fxml")));
+        switchToNewScene(newRoot, signupBorderPane, signupContainer, signupContent, -400);
     }
 
     @Override
